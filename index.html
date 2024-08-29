@@ -1,104 +1,338 @@
-<div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; background-color: #f0f8ff; color: #00008b;">
-    <h1 style="text-align: center; color: #00008b; border-bottom: 2px solid #ffd700; padding-bottom: 10px;">香港海上俱樂部 (The Hong Kong Sea Club)</h1>
-    <h2 style="text-align: center; color: #0066cc;">尊享會員資格及豪華服務指南</h2>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香港海上俱樂部 | The Hong Kong Sea Club</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            font-family: 'Noto Sans TC', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+        }
 
-    <h3 style="color: #00008b; border-left: 4px solid #ffd700; padding-left: 10px;">會員類型</h3>
-    <table style="width: 100%; border-collapse: collapse; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <tr style="background-color: #004080; color: #ffffff;">
-            <th style="padding: 12px; text-align: left;">類型</th>
-            <th style="padding: 12px; text-align: right;">入會費</th>
-            <th style="padding: 12px; text-align: right;">月費</th>
-        </tr>
-        <tr>
-            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">正式會員 (Full Member)</td>
-            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #e0e0e0;">$48,000</td>
-            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #e0e0e0;">$1,500</td>
-        </tr>
-        <tr>
-            <td style="padding: 12px;">臨時會員 (Associate)</td>
-            <td style="padding: 12px; text-align: right;">$9,800 (一年有效)</td>
-            <td style="padding: 12px; text-align: right;">$1,500</td>
-        </tr>
-    </table>
+        header {
+            background-color: #1C1C1C;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-    <h3 style="color: #00008b; border-left: 4px solid #ffd700; padding-left: 10px;">尊貴迎新獎賞</h3>
-    <ul style="list-style-type: none; padding-left: 0; background-color: #ffffff; padding: 15px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <li style="margin-bottom: 10px;">🎓 免費二級船長課程</li>
-        <li style="margin-bottom: 10px;">🚤 免費享用一次釣魚船/帆船/夜色360服務</li>
-        <li style="margin-bottom: 10px;">🚗 免費兩次Tesla接送服務</li>
-        <li style="margin-bottom: 10px;">🍾 贈送20支精選雪茄 (僅限船上或夜色360現場享用)</li>
-        <li style="margin-bottom: 10px;">🎁 獨家會員專屬迎新禮物</li>
-        <li>💳 尊貴會員卡</li>
-    </ul>
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
 
-    <h3 style="color: #00008b; border-left: 4px solid #ffd700; padding-left: 10px;">尊享秘書服務</h3>
-    <ul style="list-style-type: none; padding-left: 0; background-color: #ffffff; padding: 15px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <li style="margin-bottom: 10px;">🤝 量身定制海上商業接待安排</li>
-        <li style="margin-bottom: 10px;">🚗 便捷機場接送服務</li>
-        <li style="margin-bottom: 10px;">👪 精彩海上家庭遊樂規劃</li>
-        <li>🏢 公司海上團建安排</li>
-    </ul>
+        .logo {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            background-color: #1C1C1C;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
 
-    <h3 style="color: #00008b; border-left: 4px solid #ffd700; padding-left: 10px;">尊尚活動</h3>
-    <div style="background-color: #ffffff; padding: 15px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <p style="margin: 0; color: #004080;">🎣 定期本地及海外導釣玩樂</p>
-    </div>
+        .bubble {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
 
-    <h3 style="color: #00008b; border-left: 4px solid #ffd700; padding-left: 10px;">會員專屬遊艇服務</h3>
-    <table style="width: 100%; border-collapse: collapse; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <tr style="background-color: #004080; color: #ffffff;">
-            <th style="padding: 12px; text-align: left;">遊艇類型</th>
-            <th style="padding: 12px; text-align: right;">價格</th>
-            <th style="padding: 12px; text-align: left;">包括</th>
-        </tr>
-        <tr>
-            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">休閒帆船 (5人)</td>
-            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #e0e0e0;">$2,800</td>
-            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">專業船長</td>
-        </tr>
-        <tr>
-            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">派對帆船 (12人)</td>
-            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #e0e0e0;">$3,800</td>
-            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">專業船長</td>
-        </tr>
-        <tr>
-            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">釣魚遊艇 (12人)</td>
-            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #e0e0e0;">$3,800</td>
-            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">專業船長</td>
-        </tr>
-        <tr>
-            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">休閒遊艇 (30人)</td>
-            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #e0e0e0;">$11,800</td>
-            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">專業船長、資深水手、貼心服務員、刺激水上玩具</td>
-        </tr>
-        <tr>
-            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">派對遊艇 (50人)</td>
-            <td style="padding: 12px; text-align: right; border-bottom: 1px solid #e0e0e0;">$20,800</td>
-            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">專業船長、雙人資深水手、貼心服務員、豐富水上玩具</td>
-        </tr>
-        <tr>
-            <td style="padding: 12px;">豪華遊艇 (50人)</td>
-            <td style="padding: 12px; text-align: right;">$22,800</td>
-            <td style="padding: 12px;">專業船長、雙人資深水手、貼心服務員、頂級水上玩具</td>
-        </tr>
-    </table>
+        .logo:hover .bubble {
+            transform: scale(1.1);
+        }
 
-    <h3 style="color: #00008b; border-left: 4px solid #ffd700; padding-left: 10px;">尊貴包場餐飲服務</h3>
-    <table style="width: 100%; border-collapse: collapse; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <tr style="background-color: #004080; color: #ffffff;">
-            <th style="padding: 12px; text-align: left;">服務</th>
-            <th style="padding: 12px; text-align: right;">價格</th>
-            <th style="padding: 12px; text-align: left;">包括</th>
-        </tr>
-        <tr>
-            <td style="padding: 12px;">夜色360</td>
-            <td style="padding: 12px; text-align: right;">$3,800</td>
-            <td style="padding: 12px;">專業廚師、親切服務員</td>
-        </tr>
-    </table>
+        .bubble.b1 { width: 24px; height: 24px; top: 12px; left: 18px; }
+        .bubble.b2 { width: 10px; height: 10px; top: 6px; left: 36px; }
+        .bubble.b3 { width: 14px; height: 14px; top: 24px; left: 6px; }
+        .bubble.b4 { width: 18px; height: 18px; top: 42px; left: 24px; }
+        .bubble.b5 { width: 8px; height: 8px; top: 30px; left: 42px; }
+        .bubble.b6 { width: 6px; height: 6px; top: 36px; left: 12px; }
+        .bubble.b7 { width: 12px; height: 12px; top: 12px; left: 8px; }
+        .bubble.b8 { width: 9px; height: 9px; top: 48px; left: 36px; }
+        .bubble.b9 { width: 5px; height: 5px; top: 18px; left: 24px; }
 
-    <p style="font-style: italic; margin-top: 20px; text-align: center; color: #004080;">
-        註：所有價格以港幣計算。<br>
-        詳細服務內容及預訂，請聯絡會所客戶服務專線。
-    </p>
-</div>
+        .club-name {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            margin-left: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .club-name-en {
+            color: #a0a0a0;
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #4da6ff;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        h1, h2 {
+            color: #1C1C1C;
+            border-bottom: 2px solid #4da6ff;
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            background-color: #1C1C1C;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 10px 15px;
+            }
+
+            main {
+                padding: 30px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <div class="bubble b1"></div>
+                <div class="bubble b2"></div>
+                <div class="bubble b3"></div>
+                <div class="bubble b4"></div>
+                <div class="bubble b5"></div>
+                <div class="bubble b6"></div>
+                <div class="bubble b7"></div>
+                <div class="bubble b8"></div>
+                <div class="bubble b9"></div>
+            </div>
+            <div>
+                <div class="club-name">香港海上俱樂部</div>
+                <div class="club-name-en">The Hong Kong Sea Club</div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">首頁</a></li>
+                <li><a href="#">關於我們</a></li>
+                <li><a href="#">活動</a></li>
+                <li><a href="#">會員專區</a></li>
+                <li><a href="#">聯繫我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>歡迎來到香港海上俱樂部</h1>
+        <p>香港海上俱樂部是一個致力於促進海上活動和水上運動的高端會所。我們為會員提供獨特的海上體驗和豪華設施，旨在創造一個精緻、專業的海上生活方式。</p>
+        <p>我們提供各種與海洋相關的活動和教育項目，包括豪華遊艇租賃、專業帆船訓練、海洋生態考察等。無論您是經驗豐富的航海家還是對海上活動充滿好奇的新手，我們都歡迎您加入我們的俱樂部，一同探索海洋的奧秘，享受尊貴的會員服務。</p>
+        <p>加入香港海上俱樂部，您將擁有獨特的社交網絡，結識志同道合的海洋愛好者，同時享受我們提供的頂級設施和專業服務。讓我們一起創造難忘的海上回憶，體驗海洋帶來的無限可能。</p>
+
+        <h2>尊享會員資格及豪華服務指南</h2>
+        <h3>會員類型</h3>
+        <table>
+            <tr>
+                <th>類型</th>
+                <th>入會費</th>
+                <th>月費</th>
+            </tr>
+            <tr>
+                <td>正式會員 (Full Member)</td>
+                <td>$48,000</td>
+                <td>$1,500</td>
+            </tr>
+            <tr>
+                <td>臨時會員 (Associate)</td>
+                <td>$9,800 (一年有效)</td>
+                <td>$1,500</td>
+            </tr>
+        </table>
+
+        <h3>尊貴迎新獎賞</h3>
+        <ul>
+            <li>🎓 免費二級船長課程</li>
+            <li>🚤 免費享用一次釣魚船/帆船/夜色360服務</li>
+            <li>🚗 免費兩次Tesla接送服務</li>
+            <li>🍾 贈送20支精選雪茄 (僅限船上或夜色360現場享用)</li>
+            <li>🎁 獨家會員專屬迎新禮物</li>
+            <li>💳 尊貴會員卡</li>
+        </ul>
+
+        <h3>尊享秘書服務</h3>
+        <ul>
+            <li>🤝 量身定制海上商業接待安排</li>
+            <li>🚗 便捷機場接送服務</li>
+            <li>👪 精彩海上家庭遊樂規劃</li>
+            <li>🏢 公司海上團建安排</li>
+        </ul>
+
+        <h3>尊尚活動</h3>
+        <ul>
+            <li>🎣 定期本地及海外導釣玩樂</li>
+        </ul>
+
+        <h3>會員專屬遊艇服務</h3>
+        <table>
+            <tr>
+                <th>遊艇類型</th>
+                <th>價格</th>
+                <th>包括</th>
+            </tr>
+            <tr>
+                <td>休閒帆船 (5人)</td>
+                <td>$2,800</td>
+                <td>專業船長</td>
+            </tr>
+            <tr>
+                <td>派對帆船 (12人)</td>
+                <td>$3,800</td>
+                <td>專業船長</td>
+            </tr>
+            <tr>
+                <td>釣魚遊艇 (12人)</td>
+                <td>$3,800</td>
+                <td>專業船長</td>
+            </tr>
+            <tr>
+                <td>休閒遊艇 (30人)</td>
+                <td>$11,800</td>
+                <td>專業船長、資深水手、貼心服務員、刺激水上玩具</td>
+            </tr>
+            <tr>
+                <td>派對遊艇 (50人)</td>
+                <td>$20,800</td>
+                <td>專業船長、雙人資深水手、貼心服務員、豐富水上玩具</td>
+            </tr>
+            <tr>
+                <td>豪華遊艇 (50人)</td>
+                <td>$22,800</td>
+                <td>專業船長、雙人資深水手、貼心服務員、頂級水上玩具</td>
+            </tr>
+        </table>
+
+        <h3>尊貴包場餐飲服務</h3>
+        <table>
+            <tr>
+                <th>服務</th>
+                <th>價格</th>
+                <th>包括</th>
+            </tr>
+            <tr>
+                <td>夜色360</td>
+                <td>$3,800</td>
+                <td>專業廚師、親切服務員</td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 香港海上俱樂部 The Hong Kong Sea Club。保留所有權利。</p>
+    </footer>
+</body>
+</html>
