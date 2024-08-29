@@ -161,6 +161,26 @@
             font-size: 14px;
         }
 
+        #language-selector {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        #language-selector button {
+            background-color: #4da6ff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        #language-selector button:hover {
+            background-color: #3385ff;
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -195,10 +215,22 @@
             th, td {
                 padding: 8px;
             }
+
+            #language-selector {
+                position: static;
+                margin-top: 20px;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
+    <div id="language-selector">
+        <button onclick="changeLanguage('zh-Hant')">繁體中文</button>
+        <button onclick="changeLanguage('zh-Hans')">简体中文</button>
+        <button onclick="changeLanguage('en')">English</button>
+    </div>
+
     <header>
         <div class="logo-container">
             <div class="logo">
@@ -213,126 +245,315 @@
                 <div class="bubble b9"></div>
             </div>
             <div>
-                <div class="club-name">香港海上俱樂部</div>
-                <div class="club-name-en">The Hong Kong Sea Club</div>
+                <div class="club-name" id="club-name">香港海上俱樂部</div>
+                <div class="club-name-en" id="club-name-en">The Hong Kong Sea Club</div>
             </div>
         </div>
         <nav>
             <ul>
-                <li><a href="#">首頁</a></li>
-                <li><a href="#">關於我們</a></li>
-                <li><a href="#">活動</a></li>
-                <li><a href="#">會員專區</a></li>
-                <li><a href="#">聯繫我們</a></li>
+                <li><a href="#" id="nav-home">首頁</a></li>
+                <li><a href="#" id="nav-about">關於我們</a></li>
+                <li><a href="#" id="nav-activities">活動</a></li>
+                <li><a href="#" id="nav-members">會員專區</a></li>
+                <li><a href="#" id="nav-contact">聯繫我們</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>歡迎來到香港海上俱樂部</h1>
-        <p>香港海上俱樂部是一個致力於促進海上活動和水上運動的高端會所。我們為會員提供獨特的海上體驗和豪華設施，旨在創造一個精緻、專業的海上生活方式。</p>
-        <p>我們提供各種與海洋相關的活動和教育項目，包括豪華遊艇租賃、專業帆船訓練、海洋生態考察等。無論您是經驗豐富的航海家還是對海上活動充滿好奇的新手，我們都歡迎您加入我們的俱樂部，一同探索海洋的奧秘，享受尊貴的會員服務。</p>
-        <p>加入香港海上俱樂部，您將擁有獨特的社交網絡，結識志同道合的海洋愛好者，同時享受我們提供的頂級設施和專業服務。讓我們一起創造難忘的海上回憶，體驗海洋帶來的無限可能。</p>
+        <h1 id="welcome-title">歡迎來到香港海上俱樂部</h1>
+        <p id="intro-1">香港海上俱樂部是一個致力於促進海上活動和水上運動的高端會所。我們為會員提供獨特的海上體驗和豪華設施，旨在創造一個精緻、專業的海上生活方式。</p>
+        <p id="intro-2">我們提供各種與海洋相關的活動和教育項目，包括豪華遊艇租賃、專業帆船訓練、海洋生態考察等。無論您是經驗豐富的航海家還是對海上活動充滿好奇的新手，我們都歡迎您加入我們的俱樂部，一同探索海洋的奧秘，享受尊貴的會員服務。</p>
+        <p id="intro-3">加入香港海上俱樂部，您將擁有獨特的社交網絡，結識志同道合的海洋愛好者，同時享受我們提供的頂級設施和專業服務。讓我們一起創造難忘的海上回憶，體驗海洋帶來的無限可能。</p>
 
-        <h2>尊享會員資格及豪華服務指南</h2>
-        <h3>會員類型</h3>
+        <h2 id="membership-title">尊享會員資格及豪華服務指南</h2>
+        <h3 id="membership-types">會員類型</h3>
         <table>
             <tr>
-                <th>類型</th>
-                <th>入會費</th>
-                <th>月費</th>
+                <th id="type">類型</th>
+                <th id="joining-fee">入會費</th>
+                <th id="monthly-fee">月費</th>
             </tr>
             <tr>
-                <td>正式會員 (Full Member)</td>
+                <td id="full-member">正式會員 (Full Member)</td>
                 <td>$48,000</td>
                 <td>$1,500</td>
             </tr>
             <tr>
-                <td>臨時會員 (Associate)</td>
-                <td>$9,800 (一年有效)</td>
+                <td id="associate-member">臨時會員 (Associate)</td>
+                <td id="associate-fee">$9,800 (一年有效)</td>
                 <td>$1,500</td>
             </tr>
         </table>
 
-        <h3>尊貴迎新獎賞</h3>
+        <h3 id="welcome-rewards">尊貴迎新獎賞</h3>
         <ul>
-            <li>🎓 免費二級船長課程</li>
-            <li>🚤 免費享用一次釣魚船/帆船/夜色360服務</li>
-            <li>🚗 免費兩次Tesla接送服務</li>
-            <li>🍾 贈送20支精選雪茄 (僅限船上或夜色360現場享用)</li>
-            <li>🎁 獨家會員專屬迎新禮物</li>
-            <li>💳 尊貴會員卡</li>
+            <li id="reward-1">🎓 免費二級船長課程</li>
+            <li id="reward-2">🚤 免費享用一次釣魚船/帆船/夜色360服務</li>
+            <li id="reward-3">🚗 免費兩次Tesla接送服務</li>
+            <li id="reward-4">🍾 贈送20支精選雪茄 (僅限船上或夜色360現場享用)</li>
+            <li id="reward-5">🎁 獨家會員專屬迎新禮物</li>
+            <li id="reward-6">💳 尊貴會員卡</li>
         </ul>
 
-        <h3>尊享秘書服務</h3>
+        <h3 id="secretarial-services">尊享秘書服務</h3>
         <ul>
-            <li>🤝 量身定制海上商業接待安排</li>
-            <li>🚗 便捷機場接送服務</li>
-            <li>👪 精彩海上家庭遊樂規劃</li>
-            <li>🏢 公司海上團建安排</li>
+            <li id="service-1">🤝 量身定制海上商業接待安排</li>
+            <li id="service-2">🚗 便捷機場接送服務</li>
+            <li id="service-3">👪 精彩海上家庭遊樂規劃</li>
+            <li id="service-4">🏢 公司海上團建安排</li>
         </ul>
 
-        <h3>尊尚活動</h3>
+        <h3 id="exclusive-activities">尊尚活動</h3>
         <ul>
-            <li>🎣 定期本地及海外導釣玩樂</li>
+            <li id="activity-1">🎣 定期本地及海外導釣玩樂</li>
         </ul>
 
-        <h3>會員專屬遊艇服務</h3>
+        <h3 id="yacht-services">會員專屬遊艇服務</h3>
         <table>
             <tr>
-                <th>遊艇類型</th>
-                <th>價格</th>
-                <th>包括</th>
+                <th id="yacht-type">遊艇類型</th>
+                <th id="price">價格</th>
+                <th id="includes">包括</th>
             </tr>
             <tr>
-                <td>休閒帆船 (5人)</td>
+                <td id="yacht-1">休閒帆船 (5人)</td>
                 <td>$2,800</td>
-                <td>專業船長</td>
+                <td id="yacht-1-includes">專業船長</td>
             </tr>
             <tr>
-                <td>派對帆船 (12人)</td>
+                <td id="yacht-2">派對帆船 (12人)</td>
                 <td>$3,800</td>
-                <td>專業船長</td>
+                <td id="yacht-2-includes">專業船長</td>
             </tr>
             <tr>
-                <td>釣魚遊艇 (12人)</td>
+                <td id="yacht-3">釣魚遊艇 (12人)</td>
                 <td>$3,800</td>
-                <td>專業船長</td>
+                <td id="yacht-3-includes">專業船長</td>
             </tr>
             <tr>
-                <td>休閒遊艇 (30人)</td>
+                <td id="yacht-4">休閒遊艇 (30人)</td>
                 <td>$11,800</td>
-                <td>專業船長、資深水手、貼心服務員、刺激水上玩具</td>
+                <td id="yacht-4-includes">專業船長、資深水手、貼心服務員、刺激水上玩具</td>
             </tr>
             <tr>
-                <td>派對遊艇 (50人)</td>
+                <td id="yacht-5">派對遊艇 (50人)</td>
                 <td>$20,800</td>
-                <td>專業船長、雙人資深水手、貼心服務員、豐富水上玩具</td>
+                <td id="yacht-5-includes">專業船長、雙人資深水手、貼心服務員、豐富水上玩具</td>
             </tr>
             <tr>
-                <td>豪華遊艇 (50人)</td>
+                <td id="yacht-6">豪華遊艇 (50人)</td>
                 <td>$22,800</td>
-                <td>專業船長、雙人資深水手、貼心服務員、頂級水上玩具</td>
+                <td id="yacht-6-includes">專業船長、雙人資深水手、貼心服務員、頂級水上玩具</td>
             </tr>
         </table>
 
-        <h3>尊貴包場餐飲服務</h3>
+        <h3 id="catering-services">尊貴包場餐飲服務</h3>
         <table>
             <tr>
-                <th>服務</th>
-                <th>價格</th>
-                <th>包括</th>
+                <th id="service">服務</th>
+                <th id="price-2">價格</th>
+                <th id="includes-2">包括</th>
             </tr>
             <tr>
-                <td>夜色360</td>
+                <td id="night-360">夜色360</td>
                 <td>$3,800</td>
-                <td>專業廚師、親切服務員</td>
+                <td id="night-360-includes">專業廚師、親切服務員</td>
             </tr>
         </table>
     </main>
 
     <footer>
-        <p>&copy; 2024 香港海上俱樂部 The Hong Kong Sea Club。保留所有權利。</p>
+        <p id="copyright">&copy; 2024 香港海上俱樂部 The Hong Kong Sea Club。保留所有權利。</p>
     </footer>
+
+    <script>
+        const translations = {
+            'zh-Hant': {
+                'club-name': '香港海上俱樂部',
+                'club-name-en': 'The Hong Kong Sea Club',
+                'nav-home': '首頁',
+                'nav-about': '關於我們',
+                'nav-activities': '活動',
+                'nav-members': '會員專區',
+                'nav-contact': '聯繫我們',
+                'welcome-title': '歡迎來到香港海上俱樂部',
+                'intro-1': '香港海上俱樂部是一個致力於促進海上活動和水上運動的高端會所。我們為會員提供獨特的海上體驗和豪華設施，旨在創造一個精緻、專業的海上生活方式。',
+                'intro-2': '我們提供各種與海洋相關的活動和教育項目，包括豪華遊艇租賃、專業帆船訓練、海洋生態考察等。無論您是經驗豐富的航海家還是對海上活動充滿好奇的新手，我們都歡迎您加入我們的俱樂部，一同探索海洋的奧秘，享受尊貴的會員服務。',
+                'intro-3': '加入香港海上俱樂部，您將擁有獨特的社交網絡，結識志同道合的海洋愛好者，同時享受我們提供的頂級設施和專業服務。讓我們一起創造難忘的海上回憶，體驗海洋帶來的無限可能。',
+                'membership-title': '尊享會員資格及豪華服務指南',
+                'membership-types': '會員類型',
+                'type': '類型',
+                'joining-fee': '入會費',
+                'monthly-fee': '月費',
+                'full-member': '正式會員 (Full Member)',
+                'associate-member': '臨時會員 (Associate)',
+                'associate-fee': '$9,800 (一年有效)',
+                'welcome-rewards': '尊貴迎新獎賞',
+                'reward-1': '🎓 免費二級船長課程',
+                'reward-2': '🚤 免費享用一次釣魚船/帆船/夜色360服務',
+                'reward-3': '🚗 免費兩次Tesla接送服務',
+                'reward-4': '🍾 贈送20支精選雪茄 (僅限船上或夜色360現場享用)',
+                'reward-5': '🎁 獨家會員專屬迎新禮物',
+                'reward-6': '💳 尊貴會員卡',
+                'secretarial-services': '尊享秘書服務',
+                'service-1': '🤝 量身定制海上商業接待安排',
+                'service-2': '🚗 便捷機場接送服務',
+                'service-3': '👪 精彩海上家庭遊樂規劃',
+                'service-4': '🏢 公司海上團建安排',
+                'exclusive-activities': '尊尚活動',
+                'activity-1': '🎣 定期本地及海外導釣玩樂',
+                'yacht-services': '會員專屬遊艇服務',
+                'yacht-type': '遊艇類型',
+                'price': '價格',
+                'includes': '包括',
+                'yacht-1': '休閒帆船 (5人)',
+                'yacht-1-includes': '專業船長',
+                'yacht-2': '派對帆船 (12人)',
+                'yacht-2-includes': '專業船長',
+                'yacht-3': '釣魚遊艇 (12人)',
+                'yacht-3-includes': '專業船長',
+                'yacht-4': '休閒遊艇 (30人)',
+                'yacht-4-includes': '專業船長、資深水手、貼心服務員、刺激水上玩具',
+                'yacht-5': '派對遊艇 (50人)',
+                'yacht-5-includes': '專業船長、雙人資深水手、貼心服務員、豐富水上玩具',
+                'yacht-6': '豪華遊艇 (50人)',
+                'yacht-6-includes': '專業船長、雙人資深水手、貼心服務員、頂級水上玩具',
+                'catering-services': '尊貴包場餐飲服務',
+                'service': '服務',
+                'price-2': '價格',
+                'includes-2': '包括',
+                'night-360': '夜色360',
+                'night-360-includes': '專業廚師、親切服務員',
+                'copyright': '© 2024 香港海上俱樂部 The Hong Kong Sea Club。保留所有權利。'
+            },
+            'zh-Hans': {
+                'club-name': '香港海上俱乐部',
+                'club-name-en': 'The Hong Kong Sea Club',
+                'nav-home': '首页',
+                'nav-about': '关于我们',
+                'nav-activities': '活动',
+                'nav-members': '会员专区',
+                'nav-contact': '联系我们',
+                'welcome-title': '欢迎来到香港海上俱乐部',
+                'intro-1': '香港海上俱乐部是一个致力于促进海上活动和水上运动的高端会所。我们为会员提供独特的海上体验和豪华设施，旨在创造一个精致、专业的海上生活方式。',
+                'intro-2': '我们提供各种与海洋相关的活动和教育项目，包括豪华游艇租赁、专业帆船训练、海洋生态考察等。无论您是经验丰富的航海家还是对海上活动充满好奇的新手，我们都欢迎您加入我们的俱乐部，一同探索海洋的奥秘，享受尊贵的会员服务。',
+                'intro-3': '加入香港海上俱乐部，您将拥有独特的社交网络，结识志同道合的海洋爱好者，同时享受我们提供的顶级设施和专业服务。让我们一起创造难忘的海上回忆，体验海洋带来的无限可能。',
+                'membership-title': '尊享会员资格及豪华服务指南',
+                'membership-types': '会员类型',
+                'type': '类型',
+                'joining-fee': '入会费',
+                'monthly-fee': '月费',
+                'full-member': '正式会员 (Full Member)',
+                'associate-member': '临时会员 (Associate)',
+                'associate-fee': '$9,800 (一年有效)',
+                'welcome-rewards': '尊贵迎新奖赏',
+                'reward-1': '🎓 免费二级船长课程',
+                'reward-2': '🚤 免费享用一次钓鱼船/帆船/夜色360服务',
+                'reward-3': '🚗 免费两次Tesla接送服务',
+                'reward-4': '🍾 赠送20支精选雪茄 (仅限船上或夜色360现场享用)',
+                'reward-5': '🎁 独家会员专属迎新礼物',
+                'reward-6': '💳 尊贵会员卡',
+                'secretarial-services': '尊享秘书服务',
+                'service-1': '🤝 量身定制海上商业接待安排',
+                'service-2': '🚗 便捷机场接送服务',
+                'service-3': '👪 精彩海上家庭游乐规划',
+                'service-4': '🏢 公司海上团建安排',
+                'exclusive-activities': '尊尚活动',
+                'activity-1': '🎣 定期本地及海外导钓玩乐',
+                'yacht-services': '会员专属游艇服务',
+                'yacht-type': '游艇类型',
+                'price': '价格',
+                'includes': '包括',
+                'yacht-1': '休闲帆船 (5人)',
+                'yacht-1-includes': '专业船长',
+                'yacht-2': '派对帆船 (12人)',
+                'yacht-2-includes': '专业船长',
+                'yacht-3': '钓鱼游艇 (12人)',
+                'yacht-3-includes': '专业船长',
+                'yacht-4': '休闲游艇 (30人)',
+                'yacht-4-includes': '专业船长、资深水手、贴心服务员、刺激水上玩具',
+                'yacht-5': '派对游艇 (50人)',
+                'yacht-5-includes': '专业船长、双人资深水手、贴心服务员、丰富水上玩具',
+                'yacht-6': '豪华游艇 (50人)',
+                'yacht-6-includes': '专业船长、双人资深水手、贴心服务员、顶级水上玩具',
+                'catering-services': '尊贵包场餐饮服务',
+                'service': '服务',
+                'price-2': '价格',
+                'includes-2': '包括',
+                'night-360': '夜色360',
+                'night-360-includes': '专业厨师、亲切服务员',
+                'copyright': '© 2024 香港海上俱乐部 The Hong Kong Sea Club。保留所有权利。'
+            },
+            'en': {
+                'club-name': 'The Hong Kong Sea Club',
+                'club-name-en': 'The Hong Kong Sea Club',
+                'nav-home': 'Home',
+                'nav-about': 'About Us',
+                'nav-activities': 'Activities',
+                'nav-members': 'Members',
+                'nav-contact': 'Contact',
+                'welcome-title': 'Welcome to The Hong Kong Sea Club',
+                'intro-1': 'The Hong Kong Sea Club is a premier club dedicated to promoting maritime activities and water sports. We offer our members unique sea experiences and luxurious facilities, aiming to create a refined and professional maritime lifestyle.',
+                'intro-2': 'We provide a variety of ocean-related activities and educational programs, including luxury yacht charters, professional sailing training, and marine ecology expeditions. Whether you\'re an experienced sailor or a curious newcomer to maritime activities, we welcome you to join our club, explore the mysteries of the ocean together, and enjoy our exclusive member services.',
+                'intro-3': 'By joining The Hong Kong Sea Club, you\'ll have access to a unique social network, meet like-minded ocean enthusiasts, and enjoy our top-tier facilities and professional services. Let\'s create unforgettable maritime memories together and experience the endless possibilities the ocean has to offer.',
+                'membership-title': 'Exclusive Membership and Luxury Service Guide',
+                'membership-types': 'Membership Types',
+                'type': 'Type',
+                'joining-fee': 'Joining Fee',
+                'monthly-fee': 'Monthly Fee',
+                'full-member': 'Full Member',
+                'associate-member': 'Associate Member',
+                'associate-fee': '$9,800 (Valid for one year)',
+                'welcome-rewards': 'Prestigious Welcome Rewards',
+                'reward-1': '🎓 Free Level 2 Captain Course',
+                'reward-2': '🚤 Complimentary use of fishing boat/sailboat/Night 360 service',
+                'reward-3': '🚗 Two free Tesla pick-up services',
+                'reward-4': '🍾 20 premium cigars (for on-board or Night 360 use only)',
+                'reward-5': '🎁 Exclusive member welcome gift',
+                'reward-6': '💳 Prestigious membership card',
+                'secretarial-services': 'Exclusive Secretarial Services',
+                'service-1': '🤝 Tailor-made maritime business reception arrangements',
+                'service-2': '🚗 Convenient airport transfer service',
+                'service-3': '👪 Exciting maritime family entertainment planning',
+                'service-4': '🏢 Corporate maritime team building arrangements',
+                'exclusive-activities': 'Exclusive Activities',
+                'activity-1': '🎣 Regular local and overseas guided fishing trips',
+                'yacht-services': 'Exclusive Yacht Services for Members',
+                'yacht-type': 'Yacht Type',
+                'price': 'Price',
+                'includes': 'Includes',
+                'yacht-1': 'Leisure Sailboat (5 people)',
+                'yacht-1-includes': 'Professional captain',
+                'yacht-2': 'Party Sailboat (12 people)',
+                'yacht-2-includes': 'Professional captain',
+                'yacht-3': 'Fishing Yacht (12 people)',
+                'yacht-3-includes': 'Professional captain',
+                'yacht-4': 'Leisure Yacht (30 people)',
+                'yacht-4-includes': 'Professional captain, experienced sailor, attentive staff, exciting water toys',
+                'yacht-5': 'Party Yacht (50 people)',
+                'yacht-5-includes': 'Professional captain, two experienced sailors, attentive staff, abundant water toys',
+                'yacht-6': 'Luxury Yacht (50 people)',
+                'yacht-6-includes': 'Professional captain, two experienced sailors, attentive staff, premium water toys',
+                'catering-services': 'Exclusive Venue Catering Services',
+                'service': 'Service',
+                'price-2': 'Price',
+                'includes-2': 'Includes',
+                'night-360': 'Night 360',
+                'night-360-includes': 'Professional chef, friendly staff',
+                'copyright': '© 2024 The Hong Kong Sea Club. All rights reserved.'
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            for (let key in translations[lang]) {
+                let element = document.getElementById(key);
+                if (element) {
+                    element.textContent = translations[lang][key];
+                }
+            }
+        }
+    </script>
 </body>
 </html>
