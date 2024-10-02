@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香港海上俱樂部 - 會員服務指南</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #005a87;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #005a87;
+            color: white;
+        }
+        .note {
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>香港海上俱樂部 (The Hong Kong Sea Club)</h1>
+    <h2>尊享會員資格及豪華服務指南</h2>
+
+    <h3>會員充值方案</h3>
+    <table>
+        <tr>
+            <th>會員級別</th>
+            <th>充值金額 (港幣)</th>
+        </tr>
+        <tr>
+            <td>鑽石會員</td>
+            <td>$50,000</td>
+        </tr>
+        <tr>
+            <td>白金會員</td>
+            <td>$30,000</td>
+        </tr>
+        <tr>
+            <td>黃金會員</td>
+            <td>$10,000</td>
+        </tr>
+    </table>
+    <p class="note">註：每次使用船隻服務的費用將從充值餘額中扣除。</p>
+
+    <h3>會員溝通平台</h3>
+    <ul>
+        <li>所有會員將被邀請加入專屬WeChat群組</li>
+        <li>群組用於發佈最新優惠、活動資訊及處理預訂</li>
+    </ul>
+
+    <h3>預訂及服務流程</h3>
+    <ol>
+        <li>會員通過WeChat群組或私訊聯繫會員經理</li>
+        <li>會員經理協助處理預訂，確認細節</li>
+        <li>服務完成後，財務專員處理餘額扣除</li>
+    </ol>
+
+    <h3>專屬團隊</h3>
+    <h4>1. 會員經理</h4>
+    <ul>
+        <li>負責接待會員預訂項目</li>
+        <li>通過WeChat處理所有預訂流程</li>
+        <li>確保預訂過程簡單快捷</li>
+    </ul>
+
+    <h4>2. 財務專員</h4>
+    <ul>
+        <li>在項目完結後處理會員餘額</li>
+        <li>確保賬目準確無誤</li>
+        <li>定期向會員提供餘額更新</li>
+    </ul>
+
+    <h3>會員專屬遊艇服務</h3>
+    <table>
+        <tr>
+            <th>服務類型</th>
+            <th>價格 (港幣)</th>
+            <th>包括</th>
+        </tr>
+        <tr>
+            <td>帆船 (5人)</td>
+            <td>$2,800</td>
+            <td>專業船長</td>
+        </tr>
+        <tr>
+            <td>帆船 (12人)</td>
+            <td>$3,800</td>
+            <td>專業船長</td>
+        </tr>
+        <tr>
+            <td>釣魚遊艇 (12人)</td>
+            <td>$3,800</td>
+            <td>專業船長</td>
+        </tr>
+        <tr>
+            <td>休閒遊艇 E365 (30人)</td>
+            <td>$11,800</td>
+            <td>專業船長、資深水手、貼心服務員、刺激水上玩具</td>
+        </tr>
+        <tr>
+            <td>派對遊艇 大笨象 (50人)</td>
+            <td>$20,800</td>
+            <td>專業船長、雙人資深水手、貼心服務員、豐富水上玩具</td>
+        </tr>
+        <tr>
+            <td>豪華遊艇 Moon (50人)</td>
+            <td>$22,800</td>
+            <td>專業船長、雙人資深水手、貼心服務員、頂級水上玩具</td>
+        </tr>
+    </table>
+
+    <h3>尊貴包場餐飲服務</h3>
+    <table>
+        <tr>
+            <th>服務類型</th>
+            <th>價格 (港幣)</th>
+            <th>包括</th>
+        </tr>
+        <tr>
+            <td>夜色360</td>
+            <td>$3,800</td>
+            <td>專業廚師、親切服務員</td>
+        </tr>
+    </table>
+
+    <h3>尊享秘書服務</h3>
+    <ul>
+        <li>量身定制海上商業接待安排</li>
+        <li>便捷機場接送服務</li>
+        <li>精彩海上家庭遊樂規劃</li>
+    </ul>
+
+    <p class="note">
+        註：所有價格以港幣計算。<br>
+        詳細服務內容及預訂，請聯絡會員經理或通過WeChat群組諮詢。<br>
+        會員可隨時補充充值餘額以繼續享受會員權益。
+    </p>
+</body>
+</html>
